@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Princess 💜</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #ffd6f6, #e8d5ff, #c7b8ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .birthday-page {
+            width: 95%;
+            max-width: 1100px;
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 15px 50px rgba(91, 47, 120, 0.3);
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+
+        /* Heading */
+        .title {
+            position: absolute;
+            top: 25px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            color: #762c91;
+            text-shadow: 2px 2px 8px white;
+        }
+
+        .title h1 {
+            font-size: 45px;
+        }
+
+        .title p {
+            margin-top: 5px;
+            font-size: 20px;
+            color: #8b4ca8;
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            width: 55px;
+            height: 70px;
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: #777;
+            top: 68px;
+            left: 50%;
+        }
+
+        .b1 { background:#ff6fae; left:5%; bottom:-100px; animation-delay:0s; }
+        .b2 { background:#8e6cff; left:15%; bottom:-120px; animation-delay:1s; }
+        .b3 { background:#ffd45c; left:30%; bottom:-150px; animation-delay:2s; }
+        .b4 { background:#ff8c8c; right:25%; bottom:-130px; animation-delay:1.5s; }
+        .b5 { background:#6dd5ed; right:12%; bottom:-100px; animation-delay:2.5s; }
+        .b6 { background:#c77dff; right:3%; bottom:-140px; animation-delay:.5s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-5deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-900px) rotate(8deg);
+                opacity: 0;
+            }
+        }
+
+        /* Princess */
+        .princess {
+            position: absolute;
+            bottom: 155px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            text-align: center;
+        }
+
+        .princess .head {
+            width: 75px;
+            height: 75px;
+            background: #f5c6a5;
+            border-radius: 50%;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hair */
+        .hair {
+            position: absolute;
+            width: 90px;
+            height: 105px;
+            background: #35144f;
+            border-radius: 50%;
+            top: -15px;
+            left: -8px;
+            z-index: -1;
+        }
+
+        /* Crown */
+        .crown {
+            position: absolute;
+            top: -35px;
+            left: 13px;
+            font-size: 38px;
+        }
+
+        /* Dress */
+        .dress {
+            width: 240px;
+            height: 250px;
+            background: linear-gradient(to bottom, #9b59d0, #5e2a91);
+            clip-path: polygon(35% 0, 65% 0, 100% 100%, 0 100%);
+            margin: -5px auto 0;
+            position: relative;
+        }
+
+        .dress::after {
+            content: "✨";
+            position: absolute;
+            font-size: 30px;
+            top: 100px;
+            left: 105px;
+        }
+
+        /* Cake */
+        .cake {
+            position: absolute;
+            bottom: 105px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 270px;
+            height: 130px;
+            z-index: 7;
+        }
+
+        .cake-top {
+            width: 270px;
+            height: 60px;
+            background: #fff0ff;
+            border-radius: 50%;
+            border: 5px solid #d59aff;
+            position: absolute;
+            top: 0;
+        }
+
+        .cake-body {
+            width: 250px;
+            height: 90px;
+            background: linear-gradient(#dca6ff, #a85bd4);
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            border-radius: 15px 15px 35px 35px;
+        }
+
+        .cake-text {
+            position: absolute;
+            top: 52px;
+            width: 100%;
+            text-align: center;
+            z-index: 5;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 35px;
+            background: #ff7eb6;
+            top: -30px;
+            z-index: 10;
+        }
+
+        .c1 { left:90px; }
+        .c2 { left:130px; }
+        .c3 { left:170px; }
+
+        .flame {
+            width: 15px;
+            height: 20px;
+            background: #ffd166;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: -4px;
+            animation: flicker .5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        /* Flowers */
+        .flowers {
+            position: absolute;
+            bottom: 70px;
+            width: 100%;
+            z-index: 8;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .bouquet {
+            font-size: 65px;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,.2));
+        }
+
+        /* Wish */
+        .wish {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #66247f;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .heart {
+            color: #ff4f9a;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            color: white;
+            font-size: 25px;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            from { opacity: .3; transform: scale(.8); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+
+        .s1 { top:25%; left:10%; }
+        .s2 { top:40%; right:10%; }
+        .s3 { top:65%; left:20%; }
+        .s4 { top:20%; right:25%; }
+    </style>
+</head>
+
+<body>
+
+<div class="birthday-page">
+
+    <!-- Title -->
+    <div class="title">
+        <h1>🎀 Happy Birthday, Princess! 🎀</h1>
+        <p>A beautiful day for a beautiful soul 💜</p>
+    </div>
+
+    <!-- Balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+    <div class="balloon b6"></div>
+
+    <!-- Sparkles -->
+    <div class="sparkle s1">✨</div>
+    <div class="sparkle s2">⭐</div>
+    <div class="sparkle s3">✨</div>
+    <div class="sparkle s4">💫</div>
+
+    <!-- Princess -->
+    <div class="princess">
+
+        <div class="head">
+            <div class="hair"></div>
+            <div class="crown">👑</div>
+        </div>
+
+        <div class="dress"></div>
+
+    </div>
+
+    <!-- Cake -->
+    <div class="cake">
+
+        <div class="cake-top"></div>
+
+        <div class="cake-body"></div>
+
+        <div class="cake-text">
+            HAPPY BIRTHDAY 💜
+        </div>
+
+        <div class="candle c1">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle c2">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle c3">
+            <div class="flame"></div>
+        </div>
+
+    </div>
+
+    <!-- Flower Bouquets -->
+    <div class="flowers">
+        <div class="bouquet">💐🌷</div>
+        <div class="bouquet">🌸💐🌹</div>
+        <div class="bouquet">💐🌺</div>
+    </div>
+
+    <!-- Birthday Wish -->
+    <div class="wish">
+        May your life always be filled with happiness, laughter,
+        beautiful memories and endless dreams. 🌸<br>
+        Keep shining like the princess you are! 👑
+        <span class="heart">❤️</span>
+    </div>
+
+</div>
+
+</body>
+</html>
